@@ -13,6 +13,22 @@
 </head>
 <body>
 
+  <!-- ===================== PASSWORD GATE ===================== -->
+  <div class="gate" id="gate">
+    <form class="gate-card" id="gate-form">
+      <p class="gate-kicker">Izabella Burghardt</p>
+      <h2 class="gate-title">This space is kept dim.</h2>
+      <p class="gate-line">Enter the word to come in.</p>
+      <div class="gate-row">
+        <input class="gate-input" id="gate-input" type="password"
+               placeholder="password" autocomplete="off" autofocus
+               aria-label="Password">
+        <button class="gate-btn" type="submit" aria-label="Enter">&rarr;</button>
+      </div>
+      <p class="gate-error" id="gate-error">That&rsquo;s not it — try again.</p>
+    </form>
+  </div>
+
   <!-- ===================== NAV ===================== -->
   <nav class="nav">
     <a href="#top" class="nav-name">Izabella Burghardt</a>

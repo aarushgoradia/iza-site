@@ -366,6 +366,100 @@ a { color: inherit; }
   color: #5d574f;
 }
 
+/* ---------------- password gate ---------------- */
+.gate {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  padding: 6vw;
+  background:
+    radial-gradient(ellipse 60% 45% at 30% 70%, rgba(201, 168, 106, .05), transparent 70%),
+    radial-gradient(ellipse 55% 50% at 72% 25%, rgba(232, 223, 208, .04), transparent 70%),
+    var(--ink);
+  transition: opacity .9s ease;
+}
+.gate.unlocked {
+  opacity: 0;
+  pointer-events: none;
+}
+body.locked { overflow: hidden; }
+
+.gate-card {
+  text-align: center;
+  max-width: 30em;
+}
+.gate-kicker {
+  font-family: var(--sans);
+  font-size: .68rem;
+  letter-spacing: .42em;
+  text-transform: uppercase;
+  color: var(--bone-dim);
+  margin-bottom: 2.2rem;
+}
+.gate-title {
+  font-weight: 300;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  letter-spacing: .03em;
+}
+.gate-line {
+  margin-top: 1rem;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--bone-dim);
+}
+.gate-row {
+  display: flex;
+  justify-content: center;
+  gap: .8rem;
+  margin-top: 2.6rem;
+}
+.gate-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--hairline);
+  color: var(--bone);
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  letter-spacing: .12em;
+  text-align: center;
+  padding: .5rem 1rem;
+  width: min(16em, 60vw);
+  outline: none;
+  transition: border-color .4s;
+}
+.gate-input:focus { border-color: var(--bone-dim); }
+.gate-input::placeholder {
+  color: #5d574f;
+  font-style: italic;
+  letter-spacing: .12em;
+}
+.gate-btn {
+  background: none;
+  border: 1px solid var(--hairline);
+  border-radius: 50%;
+  width: 2.9rem;
+  height: 2.9rem;
+  color: var(--bone);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: border-color .4s, color .4s;
+}
+.gate-btn:hover { border-color: var(--gold); color: var(--gold); }
+.gate-error {
+  margin-top: 1.6rem;
+  font-family: var(--sans);
+  font-size: .7rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: #a3684f;
+  opacity: 0;
+  transition: opacity .3s;
+}
+.gate.wrong .gate-error { opacity: 1; }
+.gate.wrong .gate-input { border-color: #a3684f; }
+
 /* ---------------- lightbox ---------------- */
 .lightbox {
   position: fixed;
