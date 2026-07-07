@@ -54,7 +54,10 @@ a { color: inherit; }
   justify-content: space-between;
   align-items: center;
   padding: 1.4rem 4vw;
-  mix-blend-mode: difference; /* stays legible over anything */
+  background: rgba(11, 10, 10, .72);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(42, 39, 36, .5);
 }
 .nav-name {
   font-family: var(--serif);
@@ -410,8 +413,13 @@ a { color: inherit; }
 /* ---------------- responsive ---------------- */
 @media (max-width: 820px) {
   body { font-size: 17px; }
-  .nav { padding: 1.1rem 5vw; }
-  .nav-links { gap: 1.2rem; }
+  .nav {
+    flex-direction: column;
+    gap: .8rem;
+    padding: 1.1rem 5vw;
+  }
+  .nav-name { font-size: .85rem; letter-spacing: .3em; white-space: nowrap; }
+  .nav-links { gap: 1.4rem; }
   .nav-links a { font-size: .62rem; letter-spacing: .18em; }
   .section { padding: 6rem 6vw; }
   .abyss-intro,
